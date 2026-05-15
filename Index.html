@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eng. Yasmen | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <style>
         :root {
             --bg: #0d0d0d;
@@ -13,7 +12,6 @@
             --pink: #ff4d6d;
             --glass: rgba(255, 255, 255, 0.1);
         }
-
         body {
             margin: 0; background: var(--bg);
              color: white;
@@ -22,7 +20,6 @@
              justify-content: center;
             direction: ltr;
         }
-
         .container { width: 95%; max-width: 1200px; padding: 20px; }
 
         /* Header */
@@ -132,8 +129,6 @@
                   border-radius: 8px;
                    font-weight: bold;
                  }
-
-        /* To-Do List */
         .todo-input-row {
              display: flex;
              gap: 10px;
@@ -188,8 +183,6 @@
             font-size: 0.9rem;
              opacity: 0.7;
              }
-
-        /* --- الأكواد الجديدة للبلالين --- */
         #balloon-container {
             position: fixed; top: 0;
              left: 0; width: 100%;
@@ -229,7 +222,6 @@
             </div>
         </div>
     </header>
-
     <div class="grid-container">
         <div class="column">
             <div class="card">
@@ -238,7 +230,6 @@
                     <span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">JS</span> <span class="tag">Responsive</span>
                 </div>
             </div>
-            
             <div class="card">
                 <h3>Tic-Tac-Toe</h3>
                 <div class="board" id="board">
@@ -249,13 +240,11 @@
                 <p id="status" style="color:var(--pink); font-size: 0.9rem;"></p>
                 <button onclick="resetGame()" style="background:none; border:1px solid white; color:white; border-radius:5px; padding:3px 10px; cursor:pointer;">Reset</button>
             </div>
-
             <div class="card" style="text-align: center;">
                 <div id="clock"></div>
                 <div id="date"></div>
             </div>
         </div>
-
         <div class="column">
             <div class="card">
                 <h1>Hi, I'm <span style="color:var(--pink)">Yasmen</span></h1>
@@ -266,7 +255,6 @@
                 <h3>Education</h3>
                 <p>Specializing in Web Development at BUA.</p>
             </div>
-
             <div class="card">
                 <h3>To-Do List</h3>
                 <div class="todo-input-row">
@@ -285,8 +273,6 @@
     const contactCloud = document.getElementById('contactCloud');
     contactBtn.addEventListener('click', (e) => { e.stopPropagation(); contactCloud.classList.toggle('show'); });
     document.addEventListener('click', (e) => { if (!contactCloud.contains(e.target)) contactCloud.classList.remove('show'); });
-
-    // 2. To-Do List
     function addTodo() {
         const input = document.getElementById('todoInput');
         const list = document.getElementById('todoList');
@@ -302,15 +288,12 @@
         input.value = '';
     }
     document.getElementById('todoInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') addTodo(); });
-
-    // 3. Clock
     function updateClock() {
         const now = new Date();
         document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { hour12: true });
         document.getElementById('date').innerText = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
     }
     setInterval(updateClock, 1000); updateClock();
-
     // 4. Tic Tac Toe Logic
     let currentPlayer = 'X', gameState = ["", "", "", "", "", "", "", "", ""];
     const cells = document.querySelectorAll('.cell');
@@ -334,14 +317,12 @@
         const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
         return wins.some(p => gameState[p[0]] && gameState[p[0]] === gameState[p[1]] && gameState[p[0]] === gameState[p[2]]);
     }
-
     function resetGame() {
         gameState = ["", "", "", "", "", "", "", "", ""];
         cells.forEach(c => c.innerText = "");
         document.getElementById('status').innerText = "";
         currentPlayer = 'X';
     }
-
     // --- وظيفة الاحتفال بالبلالين ---
     function startCelebration() {
         const container = document.getElementById('balloon-container');
