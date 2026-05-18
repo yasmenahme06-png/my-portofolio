@@ -1,10 +1,8 @@
-// 1. Contact Cloud
     const contactBtn = document.getElementById('contactBtn');
     const contactCloud = document.getElementById('contactCloud');
     contactBtn.addEventListener('click', (e) => { e.stopPropagation(); contactCloud.classList.toggle('show'); });
     document.addEventListener('click', (e) => { if (!contactCloud.contains(e.target)) contactCloud.classList.remove('show'); });
 
-    // 2. To-Do List
     function addTodo() {
         const input = document.getElementById('todoInput');
         const list = document.getElementById('todoList');
@@ -21,7 +19,6 @@
     }
     document.getElementById('todoInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') addTodo(); });
 
-    // 3. Clock
     function updateClock() {
         const now = new Date();
         document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { hour12: true });
@@ -29,7 +26,6 @@
     }
     setInterval(updateClock, 1000); updateClock();
 
-    // 4. Tic Tac Toe Logic
     let currentPlayer = 'X', gameState = ["", "", "", "", "", "", "", "", ""];
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => {
@@ -41,7 +37,7 @@
             cell.style.color = currentPlayer === 'X' ? 'var(--pink)' : '#4ade80';
             if (checkWinner()) {
                 document.getElementById('status').innerText = `Winner: ${currentPlayer}!`;
-                startCelebration(); // <--- نداء وظيفة البلالين
+                startCelebration(); 
             }
             else if (!gameState.includes("")) document.getElementById('status').innerText = "Draw!";
             else currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
@@ -60,7 +56,6 @@
         currentPlayer = 'X';
     }
 
-    // --- وظيفة الاحتفال بالبلالين ---
     function startCelebration() {
         const container = document.getElementById('balloon-container');
         for(let i=0; i<30; i++) {
