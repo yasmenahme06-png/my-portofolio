@@ -49,7 +49,6 @@ body {
 }
 .nav-btn:hover { background: var(--pink); }
 
-/* Contact Cloud */
 .contact-cloud {
     position: absolute; 
     top: 130%; left: 50%;
@@ -86,7 +85,6 @@ content: '';
     font-size: 0.9rem;
 }
 .contact-cloud i { color: var(--pink); }
-/* Grid Layout */
 .grid-container { display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
@@ -111,7 +109,6 @@ content: '';
     border: 1px solid rgba(255,255,255,0.1); 
 }
 
-/* Tic Tac Toe */
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -138,7 +135,6 @@ content: '';
             font-weight: bold;
             }
 
-/* To-Do List */
 .todo-input-row {
         display: flex;
         gap: 10px;
@@ -182,7 +178,6 @@ content: '';
         height: 18px;
         }
 
-/* Clock */
 #clock { 
     font-size: 2.2rem;
         font-family: monospace;
@@ -194,7 +189,6 @@ content: '';
         opacity: 0.7;
         }
 
-/* --- الأكواد الجديدة للبلالين --- */
 #balloon-container {
     position: fixed; top: 0;
         left: 0; width: 100%;
